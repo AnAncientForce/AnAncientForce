@@ -1,16 +1,16 @@
 import { isMobileDevice } from "../modules/device.js";
 import { notify } from "../modules/notify.js";
 
-var dynamic_content;
-var reading_window;
-var reading_content;
-var btn_reading_window_leave;
-var copyright;
-var loading_screen;
-var CURRENT_POST = "";
+const msg_success = "[✔️] Success";
+const msg_err = "[❌] Error";
 
-var msg_success = "[✔️] Success";
-var msg_err = "[❌] Error";
+let dynamic_content;
+let reading_window;
+let reading_content;
+let btn_reading_window_leave;
+let loading_screen;
+let CURRENT_POST = "";
+let lazyloadImages;
 
 function cast_loading_screen() {
   if (loading_screen) {
@@ -34,12 +34,38 @@ function check_URL_for_matching_post(args) {
       .toLowerCase()
       .includes(args?.title.toLowerCase().replace(/ /g, "-"))
   ) {
-    (async () => {
-      const success = await show_reader(args);
-      if (success) {
-        // success
-      }
-    })();
+    show_reader(args);
+  }
+}
+
+function lazyload() {
+  if ("IntersectionObserver" in window) {
+    lazyloadImages = document.querySelectorAll(".image");
+
+    let imageObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          let image = entry.target;
+
+          if (image.dataset.src) {
+            image.src = image.dataset.src;
+          } else {
+            console.error(
+              "No 'data-src' attribute found on the image element."
+            );
+          }
+
+          image.classList.remove(".lazy");
+          imageObserver.unobserve(image);
+          // image.src = image.dataset.src;
+          // console.log("I can see:");
+        }
+      });
+    });
+
+    lazyloadImages.forEach(function (image) {
+      imageObserver.observe(image);
+    });
   }
 }
 
@@ -69,7 +95,83 @@ async function show_reader(args) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+async function load_dynamic_categories() {
+  try {
+    const site_json = await fetch("site.json");
+    const entries_json = await fetch("entries.json");
+
+    const site_data = await site_json.json();
+    const entries_data = await entries_json.json();
+
+    document.title = site_data[0].author;
+    document.getElementById("author").textContent = site_data[0].author;
+
+    document.getElementById(
+      "build_date"
+    ).textContent = `: ${site_data[0].last_build}`;
+
+    reading_window.style.display = "none";
+
+    for (let i = 0; i < entries_data.length; i++) {
+      const item = entries_data[i];
+
+      check_URL_for_matching_post(item);
+
+      let section;
+
+      if (!document.querySelector(`#${item.tag}`)) {
+        const outer_section = document.createElement("div");
+        const section_title = document.createElement("h1");
+        outer_section.classList.add("post_section", "column");
+        section_title.textContent = item.tag;
+        outer_section.appendChild(section_title);
+        section = document.createElement("div");
+        section.id = item.tag;
+        section.classList.add("post_section", "row");
+        outer_section.appendChild(section);
+        dynamic_content.appendChild(outer_section);
+      } else {
+        section = document.querySelector(`#${item.tag}`);
+      }
+
+      const div = document.createElement("div");
+      const title = document.createElement("h1");
+      const tn = document.createElement("img");
+
+      div.classList.add("post_tile", "container", "outline");
+      tn.classList.add("post_thumbnail");
+      title.textContent = item.title;
+
+      if (item.tn) {
+        tn.dataset.src = `../assets/${item.tn}`;
+        tn.classList.add("lazy", "image");
+      }
+
+      if (item.draft) {
+        title.style.color = "red";
+      }
+
+      div.addEventListener("click", async () => {
+        if (item.draft) {
+          notify({
+            message: `"${item.title}" is still in the works, check back soon!`,
+            timeout: 10,
+          });
+        } else {
+          show_reader(item);
+        }
+      });
+
+      div.appendChild(title);
+      div.appendChild(tn);
+      section.appendChild(div);
+    }
+  } catch (error) {
+    console.error("Error fetching JSON file:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
   dynamic_content = document.getElementById("dynamic_content");
   reading_window = document.getElementById("reading_window");
   reading_content = document.getElementById("reading_content");
@@ -81,109 +183,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cast_loading_screen();
 
-  fetch("site.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      document.getElementById(
-        "build_date"
-      ).textContent = `: ${data[0].last_build}`;
-    })
-    .catch((error) => {
-      console.error("Error fetching JSON file:", error);
-    });
-
-  reading_window.style.display = "none";
-
   if (isMobileDevice()) {
     alert(
       "The content of this website may be displayed incorrectly; it is highly recommended to view this website on larger screen"
     );
   }
-
-  fetch("entries.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((jsonData) => {
-      jsonData.forEach((item) => {
-        fetch(`../posts/${item.file}`)
-          .then((response) => response.text())
-          .then((markdown) => {
-            check_URL_for_matching_post(item);
-
-            var section;
-
-            // if the section not already exist, create it
-            if (!document.querySelector(`#${item.tag}`)) {
-              const outer_section = document.createElement("div");
-              const section_title = document.createElement("h1");
-
-              outer_section.classList.add("post_section", "column");
-              section_title.textContent = item.tag;
-              outer_section.appendChild(section_title);
-
-              section = document.createElement("div");
-
-              section.id = item.tag;
-              section.classList.add("post_section", "row");
-              outer_section.appendChild(section);
-              dynamic_content.appendChild(outer_section);
-            } else {
-              section = document.querySelector(`#${item.tag}`);
-            }
-
-            const div = document.createElement("div");
-            const title = document.createElement("h1");
-            const tn = document.createElement("img");
-
-            div.classList.add("post_tile", "container", "outline");
-            tn.classList.add("post_thumbnail");
-            title.textContent = item.title;
-
-            if (item.tn) {
-              tn.src = `../assets/${item.tn}`;
-            }
-
-            if (item.draft) {
-              title.style.color = "red";
-            }
-
-            div.addEventListener("click", () => {
-              if (item.draft) {
-                notify({
-                  message: `"${item.title}" is still in the works, check back soon!`,
-                  timeout: 10,
-                });
-              } else {
-                (async () => {
-                  const success = await show_reader(item);
-                  if (success) {
-                    // success
-                  }
-                })();
-              }
-            });
-
-            div.appendChild(title);
-            div.appendChild(tn);
-            section.appendChild(div);
-          })
-          .catch((error) => {
-            console.error("Error fetching Markdown file:", error);
-          });
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching JSON file:", error);
-    });
 
   btn_reading_window_leave.addEventListener("click", () => {
     reading_window.style.display = "none";
@@ -225,15 +229,11 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("Uncopyrighted")
     .addEventListener("click", (event) => {
       event.preventDefault();
-      (async () => {
-        const success = await show_reader({
-          file: "uncopyright.md",
-          title: "Uncopyright",
-        });
-        if (success) {
-          // success
-        }
-      })();
+
+      show_reader({
+        file: "uncopyright.md",
+        title: "Uncopyright",
+      });
     });
 
   document.addEventListener("keydown", (event) => {
@@ -242,5 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  await load_dynamic_categories();
+  lazyload();
   cast_loading_screen();
 });
