@@ -161,6 +161,10 @@ img {
   flex-direction: row;
 }
 
+.hoz_space {
+  margin-right: 5px;
+}
+
 .centered_text {
   text-align: center;
 }

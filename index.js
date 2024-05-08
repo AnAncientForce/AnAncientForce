@@ -95,6 +95,24 @@ async function show_reader(args) {
   }
 }
 
+function assign_data_to_element(args) {
+  if (!args?.elem_class || !args?.elem_str || !args?.elem_type) {
+    return;
+  }
+
+  const elements = document.getElementsByClassName(args?.elem_class);
+  for (var i = 0; i < elements.length; i++) {
+    switch (args?.elem_type) {
+      case "textContent":
+        elements[i].textContent = args?.elem_str;
+        break;
+      case "href":
+        elements[i].href = args?.elem_str;
+        break;
+    }
+  }
+}
+
 async function load_dynamic_categories() {
   try {
     const site_json = await fetch("site.json");
@@ -104,11 +122,24 @@ async function load_dynamic_categories() {
     const entries_data = await entries_json.json();
 
     document.title = site_data[0].author;
-    document.getElementById("author").textContent = site_data[0].author;
 
-    document.getElementById(
-      "build_date"
-    ).textContent = `: ${site_data[0].last_build}`;
+    assign_data_to_element({
+      elem_class: "author",
+      elem_str: site_data[0].author,
+      elem_type: "textContent",
+    });
+
+    assign_data_to_element({
+      elem_class: "repo",
+      elem_str: site_data[0].repo,
+      elem_type: "href",
+    });
+
+    assign_data_to_element({
+      elem_class: "build_date",
+      elem_str: site_data[0].last_build,
+      elem_type: "textContent",
+    });
 
     reading_window.style.display = "none";
 
