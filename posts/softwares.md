@@ -8,7 +8,7 @@
 - [Twinkle Tray](https://github.com/xanderfrangos/twinkle-tray), enables you to control the individual brightness of each monitor you have connected.
 
 ### Notes
-- [Obsidian](https://obsidian.md/), my favourite markdown editor. What makes this unique to others is that there's a ton of extensions to choose from, it's highly customizable and if you ever decide to change note-taking softwares, exporting your notes is as simple as right-clicking the vault and clicking "Copy" and then pasting them into your new software.
+- [Obsidian](https://obsidian.md/), my favourite markdown editor. What makes this unique to others is that there's a ton of extensions to choose from, it's highly customizable and if you ever decide to change note-taking software, exporting your notes is as simple as right-clicking the vault and clicking "Copy" and then pasting them into your new software.
 
 ### Game Engine
 - [Godot](https://godotengine.org/), one of the best open source game engines
@@ -22,4 +22,4 @@
 - [Visual Studio Code](https://code.visualstudio.com/), it's a pretty decent code editor with a ton of extensions! Don't like how it uses [Electron](https://www.electronjs.org/) since it can take up a lot of RAM.
 
 ### Desktop Visuals
-- [Wallpaper Engine](https://www.wallpaperengine.io/en), for Windows and Android. You can set live wallpapers as your desktop/homescreen background.
+- [Wallpaper Engine](https://www.wallpaperengine.io/en), for Windows and Android. You can set live wallpapers as your desktop/home screen background.

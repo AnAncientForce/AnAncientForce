@@ -36,8 +36,8 @@ WARNING! ~ This tool will override many of your configuration files! If you alre
 ---
 
 # Screenshots
-![lock](assets/sysZ/lock.png)
-![blank_workspace](assets/sysZ/blank_workspace.png)
-![control_panel](assets/sysZ/control_panel.png)
-![guide](assets/sysZ/guide.png)
-![terminal_help](assets/sysZ/terminal_help.png)
+![lock](media/sysZ/lock.png)
+![blank_workspace](media/sysZ/blank_workspace.png)
+![control_panel](media/sysZ/control_panel.png)
+![guide](media/sysZ/guide.png)
+![terminal_help](media/sysZ/terminal_help.png)

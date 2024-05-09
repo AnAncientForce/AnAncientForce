@@ -10,7 +10,7 @@
   {
     "file": "tpr_trip.md",
     "title": "Thorpe Park Photo Collection #1",
-    "tn": "TPR/IMG_20230911_140244086.jpg",
+    "tn": "IMG_20230911_140244086.jpg",
     "date": "11-07-2023",
     "draft": false,
     "tag": "Blogs"
@@ -62,7 +62,7 @@
   {
     "file": "sysZ.md",
     "title": "sysZ",
-    "tn": "sysZ/terminal_help.png",
+    "tn": "terminal_help.png",
     "tn_source": "",
     "date": "2023-10-18",
     "draft": false,
@@ -74,7 +74,7 @@
     "tn": "qiqi_2.png",
     "tn_source": "",
     "date": "2024-05-07",
-    "draft": true,
+    "draft": false,
     "tag": "Articles"
   }
 ]

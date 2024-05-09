@@ -11,6 +11,14 @@ let btn_reading_window_leave;
 let loading_screen;
 let CURRENT_POST = "";
 let lazyloadImages;
+let cd = false;
+
+function cooldown(duration) {
+  cd = !cd;
+  setTimeout(function () {
+    cd = !cd;
+  }, duration);
+}
 
 function cast_loading_screen() {
   if (loading_screen) {
@@ -40,7 +48,8 @@ function check_URL_for_matching_post(args) {
 
 function lazyload() {
   if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".image");
+    //lazyloadImages = document.querySelectorAll(".image");
+    lazyloadImages = document.getElementsByTagName("img");
 
     let imageObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -58,12 +67,16 @@ function lazyload() {
           image.classList.remove(".lazy");
           imageObserver.unobserve(image);
           // image.src = image.dataset.src;
-          // console.log("I can see:");
+          // console.log("I can see:", image.dataset.src);
         }
       });
     });
-
+    /*
     lazyloadImages.forEach(function (image) {
+      imageObserver.observe(image);
+    });
+    */
+    Array.from(lazyloadImages).forEach(function (image) {
       imageObserver.observe(image);
     });
   }
@@ -85,6 +98,23 @@ async function show_reader(args) {
 
     reading_window.style.display = "block";
     reading_content.innerHTML = `<h1>${args?.title}</h1>` + result;
+
+    // LAZY LOADING for the post images
+    const post_images = reading_content.getElementsByTagName("img");
+    Array.from(post_images).forEach(function (image) {
+      var originalText = image.src;
+      var searchText = "media/";
+      var index = originalText.indexOf(searchText);
+      if (index !== -1) {
+        var result = originalText.substring(index + searchText.length);
+        image.dataset.src = "posts/media/" + result;
+        console.log(image.dataset.src);
+        image.src = "";
+      } else {
+        console.log("Text 'media/' not found.");
+      }
+    });
+    lazyload();
 
     CURRENT_POST = args?.title;
 
@@ -174,7 +204,7 @@ async function load_dynamic_categories() {
       date.textContent = dayjs(item.date).fromNow();
 
       if (item.tn) {
-        tn.dataset.src = `../assets/${item.tn}`;
+        tn.dataset.src = `../assets/thumbnails/${item.tn}`;
         tn.classList.add("lazy", "image");
       }
 
@@ -217,11 +247,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   reading_window.style.display = "none";
 
+  /*
   if (isMobileDevice()) {
     alert(
       "The content of this website may be displayed incorrectly; it is highly recommended to view this website on larger screen"
     );
   }
+  */
 
   dayjs.extend(window.dayjs_plugin_relativeTime);
 
@@ -272,9 +304,33 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
 
+  document
+    .getElementById("btn_view_credits")
+    .addEventListener("click", (event) => {
+      event.preventDefault();
+
+      show_reader({
+        file: "credit.md",
+        title: "Credits",
+      });
+    });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       reading_window.style.display = "none";
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    lazyload();
+    if (isMobileDevice()) {
+      if (!cd) {
+        notify({
+          message: "Adapted resolution for mobile",
+          timeout: 2,
+        });
+        cooldown(5000);
+      }
     }
   });
 

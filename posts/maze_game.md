@@ -1,6 +1,6 @@
 *pictured as a floating dungeon made from sand and surrounded by mist, which will be a horror-themed maze game. A enemy will be chasing you throughout the maze.*
 
-![image](assets/MAZE_GAME_01/20240428125309.png)
+![image](media/MAZE_GAME_01/20240428125309.png)
 
 #### Plot
 * You've just woken up. As high as the clouds. In fact, in the clouds. You're terrified of heights so you try not to look outside.
@@ -80,38 +80,38 @@ The game consists of:
 
 ### Creating the doors on the safe houses
 
-![image](assets/MAZE_GAME_01/20240422202910.png)
+![image](media/MAZE_GAME_01/20240422202910.png)
 
 ### Creating the maze
 
-![image](assets/MAZE_GAME_01/20240422214755.png)
+![image](media/MAZE_GAME_01/20240422214755.png)
 
 ### Editing textures for the character model in VRoidStudio
 
-![image](assets/MAZE_GAME_01/20240422154400.png)
+![image](media/MAZE_GAME_01/20240422154400.png)
 
 ### Editing the textures in Blender
 
-![image](assets/MAZE_GAME_01/20240422155622.png)
-![image](assets/MAZE_GAME_01/20240422155852.png)
+![image](media/MAZE_GAME_01/20240422155622.png)
+![image](media/MAZE_GAME_01/20240422155852.png)
 
 ### Rigging the weights for the character model in Mixamo
 
-![image](assets/MAZE_GAME_01/20240422161144.png)
+![image](media/MAZE_GAME_01/20240422161144.png)
 
 ### Testing animations work correctly Blender, as well as giving them proper names.
 
-![image](assets/MAZE_GAME_01/20240422163941.png)
+![image](media/MAZE_GAME_01/20240422163941.png)
 
 ### Coding the AI
 
-![image](assets/MAZE_GAME_01/20240423165842.png)
+![image](media/MAZE_GAME_01/20240423165842.png)
 ### Continuing work on the maze
 
-![image](assets/MAZE_GAME_01/20240423202830.png)
+![image](media/MAZE_GAME_01/20240423202830.png)
 ### Creating death scene
 
-![image](assets/MAZE_GAME_01/20240424214822.png)
+![image](media/MAZE_GAME_01/20240424214822.png)
 
 ---
 
