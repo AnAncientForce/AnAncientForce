@@ -7,3 +7,5 @@ However, this wasn't the end. With [Reverse Engineering](https://en.wikipedia.or
 There is a official [**wii**ki](https://wiki.tockdom.com) for Mario Kart Wii. I have created my own mod pack which you can find [here](https://wiki.tockdom.com/wiki/Gensokyo_Night_Racing)
 
 You can watch the tralier [here](https://www.youtube.com/watch?v=sQYpIqY36ts)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sQYpIqY36ts?si=mPWsOrKtZ9h-CsMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -63,6 +63,16 @@ button {
   outline: none;
 }
 
+button {
+  margin: 1%;
+  padding: 1%;
+  border: none;
+}
+
+img {
+  pointer-events: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f6f6f6;
@@ -83,14 +93,47 @@ button {
   }
 }
 
-button {
-  margin: 1%;
-  padding: 1%;
-  border: none;
+@media only screen and (max-width: 620px) {
+  h1 {
+    font-size: 4vw;
+  }
+
+  img {
+    height: 5vh !important;
+  }
+
+  #profile_card {
+    width: 80vw !important;
+  }
+
+  #reading_content img {
+    height: 25vh !important;
+  }
+
+  .socials img {
+    height: 3vh !important;
+  }
 }
 
-img {
+.md_img {
+  height: 40vh !important;
+}
+
+#wallpaper {
   pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  animation-name: fadein;
+  animation-duration: 2s;
+  filter: blur(4px);
+  z-index: -100;
+  background-image: url("assets/194761.png");
+  background-size: cover;
 }
 
 .center {
@@ -124,7 +167,8 @@ img {
 
 .container:hover {
   transition: transform 0.2s ease;
-  transform: scale(1.1);
+  border-color: #535bf2;
+  transform: scale(0.9);
 }
 
 @keyframes gradientAnimation {
@@ -195,10 +239,18 @@ img {
   z-index: 0;
 }
 
+.post_section.inner {
+  overflow-x: auto;
+  overflow-y: hidden; /* zoom effect triggers this */
+}
+
 .post_tile {
+  /*
   max-height: 30vh;
   max-width: 50vh;
-
+  */
+  min-height: 20vh;
+  min-width: 20vw;
   font-size: small;
 }
 
@@ -245,6 +297,8 @@ img {
 
 #reading_window button {
   font-size: large;
+  min-height: fit-content;
+  min-width: fit-content;
   height: 5%;
   width: 10%;
 }
@@ -259,7 +313,7 @@ img {
 
 .socials img {
   height: 28px;
-  width: 28px;
+  /* width: 28px; */
 }
 
 /* Loading */

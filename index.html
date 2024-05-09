@@ -5,6 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+
     <link
       rel="icon"
       href="assets/Ayzula's Profile Picture.jpg"
@@ -18,9 +21,7 @@
       <div id="loading-square-inner"></div>
     </div>
 
-    <div id="bg-container">
-      <img id="bg" src="assets/194761.png" />
-    </div>
+    <div id="wallpaper"></div>
 
     <div class="center">
       <div id="hero" class="row">
@@ -48,7 +49,9 @@
       <p>
         Special thanks to
         <a href="https://github.com/showdownjs/showdown">Showdown</a> for the
-        Markdown to HTML conversion
+        Markdown to HTML conversion, and
+        <a href="https://github.com/iamkun/dayjs">dayjs</a> for the relativeTime
+        module
       </p>
 
       <div class="row center">

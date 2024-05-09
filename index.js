@@ -141,8 +141,6 @@ async function load_dynamic_categories() {
       elem_type: "textContent",
     });
 
-    reading_window.style.display = "none";
-
     for (let i = 0; i < entries_data.length; i++) {
       const item = entries_data[i];
 
@@ -158,7 +156,7 @@ async function load_dynamic_categories() {
         outer_section.appendChild(section_title);
         section = document.createElement("div");
         section.id = item.tag;
-        section.classList.add("post_section", "row");
+        section.classList.add("post_section", "inner", "row");
         outer_section.appendChild(section);
         dynamic_content.appendChild(outer_section);
       } else {
@@ -168,10 +166,12 @@ async function load_dynamic_categories() {
       const div = document.createElement("div");
       const title = document.createElement("h1");
       const tn = document.createElement("img");
+      const date = document.createElement("p");
 
       div.classList.add("post_tile", "container", "outline");
       tn.classList.add("post_thumbnail");
       title.textContent = item.title;
+      date.textContent = dayjs(item.date).fromNow();
 
       if (item.tn) {
         tn.dataset.src = `../assets/${item.tn}`;
@@ -195,6 +195,7 @@ async function load_dynamic_categories() {
 
       div.appendChild(title);
       div.appendChild(tn);
+      div.appendChild(date);
       section.appendChild(div);
     }
   } catch (error) {
@@ -214,11 +215,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   cast_loading_screen();
 
+  reading_window.style.display = "none";
+
   if (isMobileDevice()) {
     alert(
       "The content of this website may be displayed incorrectly; it is highly recommended to view this website on larger screen"
     );
   }
+
+  dayjs.extend(window.dayjs_plugin_relativeTime);
 
   btn_reading_window_leave.addEventListener("click", () => {
     reading_window.style.display = "none";

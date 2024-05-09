@@ -3,7 +3,7 @@
     "file": "tockdom.md",
     "title": "Gensokyo Night Racing",
     "tn": "300px-Gensokyo_Night_Racing_Cover.png",
-    "date": "",
+    "date": "25-02-2024",
     "draft": false,
     "tag": "Creations"
   },
@@ -11,7 +11,7 @@
     "file": "tpr_trip.md",
     "title": "Thorpe Park Photo Collection #1",
     "tn": "TPR/IMG_20230911_140244086.jpg",
-    "date": "2024-05-07",
+    "date": "11-07-2023",
     "draft": false,
     "tag": "Blogs"
   },
@@ -19,7 +19,7 @@
     "file": "linux-vs-windows.md",
     "title": "Linux VS Windows, what will you choose?",
     "tn": "linux-vs-windows-4181040077.png",
-    "date": "",
+    "date": "2024-05-07",
     "draft": true,
     "tag": "Articles"
   },
@@ -28,7 +28,7 @@
     "title": "What is open source?",
     "tn": "open-source-logo-1776475999.png",
     "tn_source": "linuxnewbieguide.org",
-    "date": "",
+    "date": "2024-05-07",
     "draft": false,
     "tag": "Articles"
   },
@@ -55,7 +55,7 @@
     "title": "Floating Dungeon of Mist and Sand",
     "tn": "pyramid_PNG2-3559344702.png",
     "tn_source": "pngimg.com",
-    "date": "",
+    "date": "19-04-2024",
     "draft": false,
     "tag": "Creations"
   },
@@ -64,8 +64,17 @@
     "title": "sysZ",
     "tn": "sysZ/terminal_help.png",
     "tn_source": "",
-    "date": "",
+    "date": "2023-10-18",
     "draft": false,
     "tag": "Creations"
+  },
+  {
+    "file": "gacha_skip.md",
+    "title": "Why gacha games should have skip buttons",
+    "tn": "qiqi_2.png",
+    "tn_source": "",
+    "date": "2024-05-07",
+    "draft": true,
+    "tag": "Articles"
   }
 ]
