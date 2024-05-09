@@ -88,6 +88,8 @@ async function show_reader(args) {
   }
 
   try {
+    cast_loading_screen(); // need a way to get the state of loading screen in case something in the code stalls it or something
+
     const response = await fetch(`../posts/${args?.file}`);
     const markdown = await response.text();
 
@@ -117,6 +119,8 @@ async function show_reader(args) {
     lazyload();
 
     CURRENT_POST = args?.title;
+
+    cast_loading_screen();
 
     return true;
   } catch (error) {
@@ -240,7 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   btn_reading_window_leave = document.getElementById(
     "btn_reading_window_leave"
   );
-  copyright = document.getElementById("copyright");
+  // copyright = document.getElementById("copyright");
   loading_screen = document.getElementById("loading-screen");
 
   cast_loading_screen();

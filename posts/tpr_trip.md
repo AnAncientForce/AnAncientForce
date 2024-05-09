@@ -1,7 +1,7 @@
 ### Photos I took from my Thorpe Park trip before Fright Nights 2023
 
 ![beach](media/TPR/IMG_20230911_112204826.jpg)
-
+tidal wave broke moment
 ### Stealth
 
 ![stealth](media/TPR/IMG_20230911_113444556.jpg)
@@ -22,7 +22,7 @@
 
 ### Nemesis Inferno
 ![nemesis](media/TPR/IMG_20230911_114731994.jpg)
-![nemesis](media/TPR/IMG_20230911_142824583.jpg)'
+![nemesis](media/TPR/IMG_20230911_142824583.jpg)
 
 ### The Swarm
 ![swarm](media/TPR/IMG_20230911_145102504.jpg)
@@ -35,4 +35,5 @@
 ### Tidal Wave
 ![tidal](media/TPR/IMG_20230911_154230619.jpg)
 
+### View of the lake
 ![island](media/TPR/IMG_20230911_135822038.jpg)
