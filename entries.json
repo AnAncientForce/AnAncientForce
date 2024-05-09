@@ -76,5 +76,23 @@
     "date": "2024-05-07",
     "draft": false,
     "tag": "Articles"
+  },
+  {
+    "file": "web_dev.md",
+    "title": "Creating this website",
+    "tn": "HTML.png",
+    "tn_source": "",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Blogs"
+  },
+  {
+    "file": "gecko_rant.md",
+    "title": "Importance of Firefox",
+    "tn": "firefox.png",
+    "tn_source": "blog.mozilla.org",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Articles"
   }
 ]

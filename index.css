@@ -293,7 +293,6 @@ img {
 
   border: 0.5vh solid black;
 
-  
   padding: 2%;
   /* backdrop-filter: blur(10px); */
   z-index: 1;
@@ -301,25 +300,19 @@ img {
   background-image: url("assets/paper.jpg");
   background-size: cover;
   color: black;
-
-  display: flex;
-  align-self: center;
 }
 
 #reading_content {
-
   /* positioning */
-  
+
   position: relative;
   margin: auto; /* auto centers */
   width: 80%;
 
-  
-
-
-
   height: 90%; /* 85%, any higher, reader buttons leak */
-  padding: 2%;
+
+  padding-left: 1%;
+  padding-right: 1%;
 
   /*white-space: pre-wrap; NEVER USE THIS */
   word-wrap: break-word;
@@ -359,7 +352,7 @@ img {
   top: 50%;
   transform: translate(-50%, -50%);
 
-  der: 4px solid white;bor
+  border: 4px solid white;
   background-color: transparent;
   height: 100px;
   width: 100px;
