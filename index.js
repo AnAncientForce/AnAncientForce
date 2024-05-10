@@ -12,6 +12,20 @@ let loading_screen;
 let CURRENT_POST = "";
 let lazyloadImages;
 let cd = false;
+let total_network_usage = 0;
+let converter = new showdown.Converter({ smoothPreview: true });
+let debug = false;
+
+function track_network_usage(elem) {
+  // https://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src/45409613#45409613
+  fetch(elem)
+    .then((r) => r.blob())
+    .then((blob) => {
+      const sizeInMB = blob.size / (1024 * 1024);
+      debug && console.log("Blob size:", sizeInMB.toFixed(2), "MB");
+      total_network_usage += sizeInMB;
+    });
+}
 
 function cooldown(duration) {
   cd = !cd;
@@ -20,9 +34,13 @@ function cooldown(duration) {
   }, duration);
 }
 
-function cast_loading_screen() {
+function cast_loading_screen(state) {
   if (loading_screen) {
-    loading_screen.classList.toggle("on");
+    if (state) {
+      loading_screen.classList.add("on");
+    } else {
+      loading_screen.classList.remove("on");
+    }
   } else {
     console.error("Loading screen element not found.");
   }
@@ -58,7 +76,9 @@ function lazyload() {
 
           if (image.dataset.src) {
             image.src = image.dataset.src;
-          } else {
+            image.dataset.src = "";
+            track_network_usage(image.src);
+          } else if (debug) {
             console.error(
               "No 'data-src' attribute found on the image element."
             );
@@ -72,7 +92,7 @@ function lazyload() {
       });
     });
     /*
-    lazyloadImages.forEach(function (image) {
+    lazyloadImages.forEach(function (image) {p
       imageObserver.observe(image);
     });
     */
@@ -88,15 +108,13 @@ async function show_reader(args) {
   }
 
   try {
-    cast_loading_screen(); // need a way to get the state of loading screen in case something in the code stalls it or something
+    cast_loading_screen(true); // need a way to get the state of loading screen in case something in the code stalls it or something
 
     const response = await fetch(`../posts/${args?.file}`);
     const markdown = await response.text();
-
-    var converter = new showdown.Converter({ smoothPreview: true });
-    converter.setFlavor("github");
-
     const result = converter.makeHtml(markdown);
+
+    track_network_usage(result);
 
     reading_window.style.display = "block";
     reading_content.innerHTML = `<h1>${args?.title}</h1>` + result;
@@ -120,7 +138,7 @@ async function show_reader(args) {
 
     CURRENT_POST = args?.title;
 
-    cast_loading_screen();
+    cast_loading_screen(false);
 
     return true;
   } catch (error) {
@@ -247,7 +265,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // copyright = document.getElementById("copyright");
   loading_screen = document.getElementById("loading-screen");
 
-  cast_loading_screen();
+  cast_loading_screen(true);
 
   reading_window.style.display = "none";
 
@@ -320,8 +338,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      reading_window.style.display = "none";
+    switch (event.key) {
+      case "Escape":
+        reading_window.style.display = "none";
+        break;
+      case "p":
+        notify({
+          message: `${total_network_usage.toFixed(2)} MB`,
+          timeout: 2,
+        });
+        break;
     }
   });
 
@@ -340,5 +366,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await load_dynamic_categories();
   lazyload();
-  cast_loading_screen();
+  cast_loading_screen(false);
 });

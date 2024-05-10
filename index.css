@@ -1,17 +1,9 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5vh;
+  line-height: 2.5vh;
   color: white;
   background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 p {
@@ -30,6 +22,12 @@ a:hover {
 
 h1 {
   text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
 }
 
 input,
@@ -69,10 +67,6 @@ button {
   border: none;
 }
 
-img {
-  pointer-events: none;
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f6f6f6;
@@ -95,11 +89,7 @@ img {
 
 @media only screen and (max-width: 620px) {
   h1 {
-    font-size: 4vw;
-  }
-
-  img {
-    height: 5vh !important;
+    font-size: 1.5vh;
   }
 
   #profile_card {
@@ -120,14 +110,6 @@ img {
   #reading_content img {
     height: 25vh !important;
   }
-
-  .socials img {
-    height: 3vh !important;
-  }
-}
-
-.md_img {
-  height: 40vh !important;
 }
 
 #wallpaper {
@@ -182,15 +164,6 @@ img {
   transform: scale(0.9);
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
 .outline {
   margin: 4px;
   box-shadow: 0 0 5px blue;
@@ -240,7 +213,6 @@ img {
 #pfp {
   margin: 2%;
   height: 15vh;
-  border: solid 2px white;
 }
 
 .post_section {
@@ -417,6 +389,15 @@ img {
 }
 
 /* animations */
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 
 @keyframes slideLeft {
   0% {

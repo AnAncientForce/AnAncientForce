@@ -8,10 +8,38 @@
     "tag": "Creations"
   },
   {
+    "file": "maze_game.md",
+    "title": "Floating Dungeon of Mist and Sand",
+    "tn": "pyramid_PNG2-3559344702.png",
+    "tn_source": "pngimg.com",
+    "date": "19-04-2024",
+    "draft": false,
+    "tag": "Creations"
+  },
+
+  {
+    "file": "sysZ.md",
+    "title": "sysZ",
+    "tn": "terminal_help.png",
+    "tn_source": "",
+    "date": "2023-10-18",
+    "draft": false,
+    "tag": "Creations"
+  },
+  {
     "file": "tpr_trip.md",
     "title": "Thorpe Park Photo Collection #1",
     "tn": "IMG_20230911_140244086.jpg",
     "date": "11-07-2023",
+    "draft": false,
+    "tag": "Blogs"
+  },
+  {
+    "file": "web_dev.md",
+    "title": "Creating this website",
+    "tn": "HTML.png",
+    "tn_source": "",
+    "date": "2024-05-09",
     "draft": false,
     "tag": "Blogs"
   },
@@ -33,6 +61,33 @@
     "tag": "Articles"
   },
   {
+    "file": "gacha_skip.md",
+    "title": "Why gacha games should have skip buttons",
+    "tn": "qiqi_2.png",
+    "tn_source": "",
+    "date": "2024-05-07",
+    "draft": false,
+    "tag": "Articles"
+  },
+  {
+    "file": "gecko_rant.md",
+    "title": "Importance of Firefox",
+    "tn": "firefox.png",
+    "tn_source": "blog.mozilla.org",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Articles"
+  },
+  {
+    "file": "short_story_01.md",
+    "title": "Moral: Plan in Advance",
+    "tn": "notebook.png",
+    "tn_source": "clipart-library.com",
+    "date": "2024-05-10",
+    "draft": false,
+    "tag": "Short Stories"
+  },
+  {
     "file": "vocaloid.md",
     "title": "Vocaloid",
     "tn": "latest-2526423816.png",
@@ -49,50 +104,5 @@
     "date": "2024-05-07",
     "draft": false,
     "tag": "ʘ‿ʘ"
-  },
-  {
-    "file": "maze_game.md",
-    "title": "Floating Dungeon of Mist and Sand",
-    "tn": "pyramid_PNG2-3559344702.png",
-    "tn_source": "pngimg.com",
-    "date": "19-04-2024",
-    "draft": false,
-    "tag": "Creations"
-  },
-  {
-    "file": "sysZ.md",
-    "title": "sysZ",
-    "tn": "terminal_help.png",
-    "tn_source": "",
-    "date": "2023-10-18",
-    "draft": false,
-    "tag": "Creations"
-  },
-  {
-    "file": "gacha_skip.md",
-    "title": "Why gacha games should have skip buttons",
-    "tn": "qiqi_2.png",
-    "tn_source": "",
-    "date": "2024-05-07",
-    "draft": false,
-    "tag": "Articles"
-  },
-  {
-    "file": "web_dev.md",
-    "title": "Creating this website",
-    "tn": "HTML.png",
-    "tn_source": "",
-    "date": "2024-05-09",
-    "draft": false,
-    "tag": "Blogs"
-  },
-  {
-    "file": "gecko_rant.md",
-    "title": "Importance of Firefox",
-    "tn": "firefox.png",
-    "tn_source": "blog.mozilla.org",
-    "date": "2024-05-09",
-    "draft": false,
-    "tag": "Articles"
   }
 ]
