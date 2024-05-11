@@ -15,6 +15,7 @@ let cd = false;
 let total_network_usage = 0;
 let converter = new showdown.Converter({ smoothPreview: true });
 let debug = false;
+let recommended_content;
 
 function track_network_usage(elem) {
   // https://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src/45409613#45409613
@@ -110,7 +111,7 @@ async function show_reader(args) {
   try {
     cast_loading_screen(true); // need a way to get the state of loading screen in case something in the code stalls it or something
 
-    const response = await fetch(`../posts/${args?.file}`);
+    const response = await fetch(`../posts/${args?.file + ".md"}`);
     const markdown = await response.text();
     const result = converter.makeHtml(markdown);
 
@@ -128,7 +129,7 @@ async function show_reader(args) {
       if (index !== -1) {
         var result = originalText.substring(index + searchText.length);
         image.dataset.src = "posts/media/" + result;
-        console.log(image.dataset.src);
+        debug && console.log(image.dataset.src);
         image.src = "";
       } else {
         console.log("Text 'media/' not found.");
@@ -137,6 +138,24 @@ async function show_reader(args) {
     lazyload();
 
     CURRENT_POST = args?.title;
+
+    recommended_content.innerHTML = "";
+    if (args?.recommended) {
+      args?.recommended.forEach(function (recommendation) {
+        find_in_JSON(recommendation) // find entry
+          .then((recommended_entry) => {
+            const a = document.createElement("a");
+            a.textContent = "#" + recommended_entry.title;
+            a.addEventListener("click", async () => {
+              show_reader(recommended_entry);
+            });
+            recommended_content.appendChild(a);
+          })
+          .catch((error) => {
+            console.error("An error occurred:", error);
+          });
+      });
+    }
 
     cast_loading_screen(false);
 
@@ -162,6 +181,22 @@ function assign_data_to_element(args) {
         elements[i].href = args?.elem_str;
         break;
     }
+  }
+}
+
+async function find_in_JSON(target) {
+  try {
+    const entries_json = await fetch("entries.json");
+    const entries_data = await entries_json.json();
+
+    for (let i = 0; i < entries_data.length; i++) {
+      const entry = entries_data[i];
+      if (entry.file === target) {
+        return entry;
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching JSON file:", error);
   }
 }
 
@@ -264,6 +299,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   // copyright = document.getElementById("copyright");
   loading_screen = document.getElementById("loading-screen");
+  recommended_content = document.getElementById("recommended_content");
 
   cast_loading_screen(true);
 
@@ -353,7 +389,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   window.addEventListener("resize", function () {
     lazyload();
-    if (isMobileDevice()) {
+    if (debug && isMobileDevice()) {
       if (!cd) {
         notify({
           message: "Adapted resolution for mobile",

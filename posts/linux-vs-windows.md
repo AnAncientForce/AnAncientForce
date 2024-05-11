@@ -1,18 +1,72 @@
-# Windows or Linux?
+<br>
+### What is [Linux](https://en.wikipedia.org/wiki/Linux)?
 
-Based on my [Github post](https://github.com/AnAncientForce/dotfiles)
+Linux is a [open source](https://en.wikipedia.org/wiki/Open_source) kernel, which is what handles the boot process and the communication between the physical hardware and software.
 
-While they're both amazing operating systems, they have their differences. I choose Linux over Windows 10 because:
+### What is a desktop environment?
 
-- Linux is Open Source (I like to know I'm in safe hands and not in the dark)
-- Linux is a UNIX-like operating system which is my preferred choice. It feels more natural to use. Terminals are the most important!
-- Customization: It's endless! I can make my system function and look exactly how I like (which is a big thing to me)
-- I genuinely like Window Managers more then desktops (I'm using Hyprland). They are more functional and easier to use. Having two windows snap by side by default and full screen while only one window is open is just perfect.
-- Package Managers are just a life saver! Incredibly easy to install applications!
-- I like how Linux is community driven with so much choice and is not owned by a single company which is closed source (Microsoft)
-  Linux uses significantly less ram then Windows does by default (depending on the setup)
+Think of the Windows Desktop, it is Microsoft's Desktop Environment. The difference is that Linux has multiple desktop environments and window managers to choose from.
 
-### So, what about gaming?
+For example, a desktop environment like [KDE Plasma](https://en.wikipedia.org/wiki/KDE_Plasma) is one of the most user-friendly desktop environments to use, I highly recommend it for beginners as it's versatile and highly customizable.
 
-- Why do I use Windows 10 for games? Because of anticheat: It is not available on Linux.
-  Xorg vs Wayland, my experience? This is hard because so many things work on Xorg and are easier. However, Wayland eliminates screen tearing and is extremely smooth! Ultimately, I chose Wayland because it's still actively worked on and because Hyprland is so smooth! :-)
+### What is a terminal?
+
+Now, this is where things get scary. A terminal is where you enter commands, think of it as complete hacker mode.
+
+Jokes aside, you use a terminal for a numerous amount of things such as installing software, for example:
+
+The command:
+```
+sudo pacman -S firefox
+```
+
+Would install Firefox, and yes it's literally that easy. You don't need to navigate the official website of the software, all you have to do is know the software that you want to install, then enter the install command. Let's break that command down.
+
+* **sudo** means admin privileges; meaning you have to enter your password
+* **pacman** is the package manager for [Arch Linux](https://archlinux.org/) 
+* **-S** is the **pacman**'s prefix for installing packages.
+
+Now that may have sounded a bit confusing, but just remember that is how you install software.
+
+### Arch Linux? Wait, what! We were talking about "Linux"
+
+Well, yes. Linux has many different flavours, think of it like Bubble Tea.
+
+Bubble Tea has many different flavours; passion fruit, strawberry, blueberry, etc.
+
+You choose your favourite Linux [distribution](https://en.wikipedia.org/wiki/List_of_Linux_distributions). My favourite is Arch Linux; for it's simplicity, and ease of use. I recommend researching a few popular Linux distributions so you can make an informed decision about which one would work for you the best.
+
+
+### So, why would I even use Linux in the first place?
+
+With the discontinuation of Windows 10 soon to come, Microsoft users may have to switch to Windows 11 in the near feature for continued updates. This also means software developers will eventually drop support for Windows 10. Microsoft Windows has it's fair share of annoyances such as; advertisements in the start menu, bloatware installed by default, limitations without buying a licence the operating system, lack of customization; you are forced to use specific features whether you like them or not.
+
+Another thing is hardware requirements, to upgrade to Windows 11, your computer must meet a certain hardware requirement, which in simple terms means if you have an older computer, the only way you can use Windows 11 is with a bypass, which is not recommended as Microsoft could block access to your computer in the near future.
+
+### However, with Linux...
+
+* It's **open source**, so it's completely trustable, that doesn't mean to say it's completely safe since when the source code is public it is easier to find common exploits; however they are patched by the community almost instantly, if found.
+
+* You can customize Linux however you like! Don't like a specific feature? Remove it! Want to change something? Change it! There is so much choice; multiple desktop environments and windows managers to choose from, display protocols, software, and a lot more!
+
+* Linux is community driven, instead of by a single corporation (Microsoft, Apple) . Which means more user control and freedom to do whatever you'd like.
+
+* Linux can run on a potato, literally. You can run Linux on almost any device thanks to it's outstanding device compatibility.
+
+#### Surely, there must be some downsides
+
+As with anything, of course there is!
+
+* Since Linux is community driven, there is no specific guideline or route to follow, which can make it confusing for beginners.
+
+* Most software that you can obtain on Windows is also available on Linux, but some, for example Adobe Photoshop is **not available**.
+
+* Linux is very stable, but as with most things, incorrectly modifying a component or feature can cause a numerous amount of issues or errors. It is best to know what you are doing before you modify anything which is dependant on something else.
+
+### Anti-cheat
+
+When you play Online Games, there's usually a piece of software that is loaded onto your system to detect/prevent you from cheating. However, on Linux there is no such thing. The result of this is that a majority of Online Games **do not work on Linux**. This is not a fault with Linux, it is entirely the game developer's decision to add a workaround or official support for Linux.
+
+
+### Ultimately, it's your decision
+This article was to spread awareness of Linux, and to let others know that there are alternatives to Microsoft Windows and MacOS. 

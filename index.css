@@ -6,6 +6,12 @@
   background-color: #f6f6f6;
 }
 
+br {
+  display: block;
+  margin: 1.5vh 0;
+  content: " ";
+}
+
 p {
   margin: 0;
 }
@@ -42,10 +48,12 @@ button {
   background-color: #ffffff;
   transition: border-color 0.25s;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-}
 
-button {
   cursor: pointer;
+  outline: none;
+  margin: 1%;
+  padding: 1%;
+  border: none;
 }
 
 button:hover {
@@ -56,15 +64,10 @@ button:active {
   background-color: #e8e8e8;
 }
 
-input,
-button {
-  outline: none;
-}
-
-button {
-  margin: 1%;
-  padding: 1%;
-  border: none;
+.btn_recommended {
+  height: 2vh;
+  width: fit-content;
+  background-color: green;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -125,6 +128,7 @@ button {
   animation-duration: 2s;
   filter: blur(4px);
   z-index: -100;
+
   background-image: url("assets/194761.png");
   background-size: cover;
 }
@@ -269,8 +273,11 @@ button {
   /* backdrop-filter: blur(10px); */
   z-index: 1;
 
+  /*
   background-image: url("assets/paper.jpg");
   background-size: cover;
+  */
+  background-color: beige;
   color: black;
 }
 
@@ -304,8 +311,9 @@ button {
   width: 10%;
 }
 
-#copyright {
-  text-align: center;
+#recommended_content a {
+  margin: 1vh;
+  font-size: small;
 }
 
 .socials {

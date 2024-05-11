@@ -1,6 +1,6 @@
 [
   {
-    "file": "tockdom.md",
+    "file": "tockdom",
     "title": "Gensokyo Night Racing",
     "tn": "300px-Gensokyo_Night_Racing_Cover.png",
     "date": "25-02-2024",
@@ -8,7 +8,7 @@
     "tag": "Creations"
   },
   {
-    "file": "maze_game.md",
+    "file": "maze_game",
     "title": "Floating Dungeon of Mist and Sand",
     "tn": "pyramid_PNG2-3559344702.png",
     "tn_source": "pngimg.com",
@@ -18,16 +18,17 @@
   },
 
   {
-    "file": "sysZ.md",
+    "file": "sysZ",
     "title": "sysZ",
     "tn": "terminal_help.png",
     "tn_source": "",
     "date": "2023-10-18",
     "draft": false,
-    "tag": "Creations"
+    "tag": "Creations",
+    "recommended": ["linux-vs-windows"]
   },
   {
-    "file": "tpr_trip.md",
+    "file": "tpr_trip",
     "title": "Thorpe Park Photo Collection #1",
     "tn": "IMG_20230911_140244086.jpg",
     "date": "11-07-2023",
@@ -35,7 +36,7 @@
     "tag": "Blogs"
   },
   {
-    "file": "web_dev.md",
+    "file": "web_dev",
     "title": "Creating this website",
     "tn": "HTML.png",
     "tn_source": "",
@@ -44,42 +45,45 @@
     "tag": "Blogs"
   },
   {
-    "file": "linux-vs-windows.md",
+    "file": "linux-vs-windows",
     "title": "Linux VS Windows, what will you choose?",
     "tn": "linux-vs-windows-4181040077.png",
-    "date": "2024-05-07",
-    "draft": true,
+    "date": "2024-05-11",
+    "draft": false,
     "tag": "Articles"
   },
   {
-    "file": "opensource.md",
+    "file": "opensource",
     "title": "What is open source software?",
     "tn": "open-source-logo-1776475999.png",
     "tn_source": "linuxnewbieguide.org",
     "date": "2024-05-07",
     "draft": false,
-    "tag": "Articles"
+    "tag": "Articles",
+    "recommended": ["gecko_rant"]
   },
   {
-    "file": "gacha_skip.md",
+    "file": "gacha_skip",
     "title": "Why gacha games should have skip buttons",
     "tn": "qiqi_2.png",
     "tn_source": "",
-    "date": "2024-05-07",
+    "date": "2024-05-09",
     "draft": false,
-    "tag": "Articles"
+    "tag": "Articles",
+    "recommended": ["vocaloid"]
   },
   {
-    "file": "gecko_rant.md",
+    "file": "gecko_rant",
     "title": "Importance of Firefox",
     "tn": "firefox.png",
     "tn_source": "blog.mozilla.org",
     "date": "2024-05-09",
     "draft": false,
-    "tag": "Articles"
+    "tag": "Articles",
+    "recommended": ["opensource"]
   },
   {
-    "file": "short_story_01.md",
+    "file": "short_story_01",
     "title": "Moral: Plan in Advance",
     "tn": "notebook.png",
     "tn_source": "clipart-library.com",
@@ -88,21 +92,23 @@
     "tag": "Short Stories"
   },
   {
-    "file": "vocaloid.md",
+    "file": "vocaloid",
     "title": "Vocaloid",
     "tn": "latest-2526423816.png",
     "tn_source": "vocaloid.wikia.com",
     "date": "2024-05-07",
     "draft": false,
-    "tag": "ʘ‿ʘ"
+    "tag": "ʘ‿ʘ",
+    "recommended": ["softwares"]
   },
   {
-    "file": "softwares.md",
+    "file": "softwares",
     "title": "Software I use",
     "tn": "installer-97887_960_720-3265255196.png",
     "tn_source": "pixabay.com",
     "date": "2024-05-07",
     "draft": false,
-    "tag": "ʘ‿ʘ"
+    "tag": "ʘ‿ʘ",
+    "recommended": ["gecko_rant", "maze_game", "vocaloid"]
   }
 ]

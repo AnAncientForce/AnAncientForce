@@ -10,6 +10,8 @@
 ### Notes
 - [Obsidian](https://obsidian.md/), my favourite markdown editor. What makes this unique to others is that there's a ton of extensions to choose from, it's highly customizable and if you ever decide to change note-taking software, exporting your notes is as simple as right-clicking the vault and clicking "Copy" and then pasting them into your new software.
 
+### Music
+* [Spotify](https://en.wikipedia.org/wiki/Spotify), is my streaming service of choice, not vanilla, but [Spicetified Spotify](https://github.com/spicetify). It is highly customizable and full of a variety of extensions.
 ### Game Engine
 - [Godot](https://godotengine.org/), one of the best open source game engines
 
