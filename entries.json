@@ -83,6 +83,16 @@
     "recommended": ["opensource"]
   },
   {
+    "file": "music_stream",
+    "title": "Best music streaming service?",
+    "tn": "spotify.png",
+    "tn_source": "factoryrewa.weebly.com",
+    "date": "2024-05-12",
+    "draft": true,
+    "tag": "Articles",
+    "recommended": ["vocaloid"]
+  },
+  {
     "file": "short_story_01",
     "title": "Moral: Plan in Advance",
     "tn": "notebook.png",
@@ -99,7 +109,7 @@
     "date": "2024-05-07",
     "draft": false,
     "tag": "ʘ‿ʘ",
-    "recommended": ["softwares"]
+    "recommended": ["music_stream", "softwares"]
   },
   {
     "file": "softwares",

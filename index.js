@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       event.preventDefault();
 
       show_reader({
-        file: "uncopyright.md",
+        file: "uncopyright",
         title: "Uncopyright",
       });
     });
@@ -368,10 +368,40 @@ document.addEventListener("DOMContentLoaded", async () => {
       event.preventDefault();
 
       show_reader({
-        file: "credit.md",
+        file: "credit",
         title: "Credits",
       });
     });
+
+  document
+    .getElementById("random_post")
+    .addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      try {
+        const entries_json = await fetch("entries.json");
+        const entries_data = await entries_json.json();
+
+        const random_entry =
+          entries_data[Math.floor(Math.random() * entries_data.length)];
+
+        show_reader({
+          file: random_entry.file,
+          title: random_entry.title,
+        });
+      } catch (error) {
+        console.error("Error fetching JSON file:", error);
+      }
+    });
+
+  document.getElementById("disclaimer").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    show_reader({
+      file: "disclaimer",
+      title: "Disclaimer",
+    });
+  });
 
   document.addEventListener("keydown", (event) => {
     switch (event.key) {
