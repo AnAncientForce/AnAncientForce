@@ -4,7 +4,7 @@
 - To create basic scripts in python to increase productivity.
 - About Artificial intelligence, not how it works, but how it can be used.
 
-On my [website](https://anancientforce.netlify.app) you can see projects that I have created, or discussed.
+On my [website](https://anancientforce.netlify.app) you can see things I've discovered, or created.
 <!--
 **AnAncientForce/AnAncientForce** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
