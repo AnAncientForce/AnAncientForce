@@ -200,6 +200,28 @@ async function find_in_JSON(target) {
   }
 }
 
+async function load_changelog() {
+  try {
+    const site_json = await fetch("site.json");
+    const site_data = await site_json.json();
+
+    const table = document
+      .getElementById("changelog_table")
+      .getElementsByTagName("tbody")[0];
+
+    const changelog = site_data[1].changelog;
+    for (let date in changelog) {
+      if (changelog.hasOwnProperty(date)) {
+        const newRow = table.insertRow();
+        newRow.insertCell(0).textContent = dayjs(date).fromNow();
+        newRow.insertCell(1).textContent = changelog[date];
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching JSON file:", error);
+  }
+}
+
 async function load_dynamic_categories() {
   try {
     const site_json = await fetch("site.json");
@@ -259,6 +281,7 @@ async function load_dynamic_categories() {
       tn.classList.add("post_thumbnail");
       title.textContent = item.title;
       date.textContent = dayjs(item.date).fromNow();
+      // console.log(item.title, dayjs(item.date).fromNow()); // y, m, d
 
       if (item.tn) {
         tn.dataset.src = `../assets/thumbnails/${item.tn}`;
@@ -431,6 +454,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   await load_dynamic_categories();
+  await load_changelog();
   lazyload();
   cast_loading_screen(false);
 });

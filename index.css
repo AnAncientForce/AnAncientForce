@@ -1,7 +1,5 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5vh;
-  line-height: 2.5vh;
   color: white;
   background-color: #f6f6f6;
 }
@@ -74,6 +72,7 @@ button:active {
   :root {
     color: #f6f6f6;
     background-color: #2f2f2f;
+    /* font-size: 1.5vh; */
   }
 
   a:hover {
@@ -112,6 +111,12 @@ button:active {
 
   #reading_content img {
     height: 25vh !important;
+  }
+  #end_containers {
+    flex-direction: column !important;
+  }
+  #end_containers > div {
+    width: 100% !important;
   }
 }
 
@@ -211,12 +216,31 @@ button:active {
 
 #profile_card {
   padding: 1%;
-  width: 40vw;
+  /* width: 40vw; */
+  min-width: 60vw;
 }
 
 #pfp {
-  margin: 2%;
-  height: 15vh;
+  margin: 1%;
+  height: 37.5vh;
+}
+
+table {
+  padding: 1%;
+  /* width: 40vw; */
+  min-width: 60vw;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid white;
+}
+th,
+td {
+  padding: 0.5%;
+  text-align: center;
+  font-size: small;
 }
 
 .post_section {
@@ -267,7 +291,7 @@ button:active {
   top: 1vh;
   bottom: 1vh;
 
-  border: 0.5vh solid black;
+  border: 1px solid white;
 
   padding: 2%;
   /* backdrop-filter: blur(10px); */
@@ -277,8 +301,12 @@ button:active {
   background-image: url("assets/paper.jpg");
   background-size: cover;
   */
+  /*
   background-color: beige;
   color: black;
+  */
+  background-color: rgb(24, 26, 27);
+  color: white;
 }
 
 #reading_content {
@@ -318,11 +346,39 @@ button:active {
 
 .socials {
   text-align: center;
+  background-color: rgb(0, 0, 0, 0.1);
+  padding: 0.5%;
+  width: fit-content;
+  border-radius: 16px;
+}
+
+.socials * {
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 .socials img {
   height: 28px;
-  /* width: 28px; */
+  width: 28px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 7.5%;
+}
+
+#end_containers {
+  display: flex;
+  flex-direction: row;
+}
+
+#end_containers > div {
+  width: fit-content;
+  text-align: center;
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 0.5vw;
+  margin: 0.5vw;
+  font-size: medium;
+  width: 100%;
 }
 
 /* Loading */

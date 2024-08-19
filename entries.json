@@ -1,9 +1,17 @@
 [
   {
+    "file": "sd-experience",
+    "title": "My experience with Stable Diffusion",
+    "tn": "civitai.png",
+    "date": "2024-08-18",
+    "draft": false,
+    "tag": "AI"
+  },
+  {
     "file": "tockdom",
     "title": "Gensokyo Night Racing",
     "tn": "300px-Gensokyo_Night_Racing_Cover.png",
-    "date": "25-02-2024",
+    "date": "2024-02-25",
     "draft": false,
     "tag": "Creations"
   },
@@ -12,7 +20,7 @@
     "title": "Floating Dungeon of Mist and Sand",
     "tn": "pyramid_PNG2-3559344702.png",
     "tn_source": "pngimg.com",
-    "date": "19-04-2024",
+    "date": "2024-04-19",
     "draft": false,
     "tag": "Creations"
   },
@@ -31,7 +39,7 @@
     "file": "tpr_trip",
     "title": "Thorpe Park Photo Collection #1",
     "tn": "IMG_20230911_140244086.jpg",
-    "date": "11-07-2023",
+    "date": "2023-07-11",
     "draft": false,
     "tag": "Blogs"
   },
@@ -88,7 +96,7 @@
     "tn": "spotify.png",
     "tn_source": "factoryrewa.weebly.com",
     "date": "2024-05-12",
-    "draft": true,
+    "draft": false,
     "tag": "Articles",
     "recommended": ["vocaloid"]
   },

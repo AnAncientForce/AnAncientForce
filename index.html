@@ -14,11 +14,7 @@
     <script src="external/dayjs.min.js"></script>
     <script src="external/relativeTime.js"></script>
 
-    <link
-      rel="icon"
-      href="assets/Ayzula's Profile Picture.jpg"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="assets/favicon.gif" type="image/x-icon" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -38,9 +34,30 @@
             In this website, I share things I've discovered, or created! ʘ‿ʘ
           </p>
           <p>My main interests are roller coasters and computers</p>
+          <br />
+          <div id="facts" style="font-size: small">
+            <p>short attention span ✔️</p>
+            <p>glued to computer 16 hours a day, everyday ✔️</p>
+            <p>touhou fan that dosen't understand the lore ✔️</p>
+            <p>understands basic code but can't remember how to type it ✔️</p>
+            <p>
+              wants to use linux but 60% of the apps he uses is windows only ✔️
+            </p>
+            <p>
+              likes to automate everything even if it takes longer then doing it
+              manually ✔️
+            </p>
+          </div>
         </div>
-        <img id="pfp" src="assets/Ayzula's Profile Picture.jpg" />
+        <img id="pfp" src="assets/avatar.gif" />
       </div>
+    </div>
+    <div class="center">
+      <table id="changelog_table">
+        <tbody>
+          <!-- Dynamic Rows -->
+        </tbody>
+      </table>
     </div>
 
     <div id="reading_window" class="column">
@@ -54,42 +71,65 @@
 
     <div id="dynamic_content"></div>
 
-    <div class="column centered_text">
-      <a href="#" id="random_post">Pick a random post</a>
-      <a href="#" id="disclaimer">Disclaimer</a>
-      <div class="row center">
+    <div id="end_containers">
+      <div>
+        <a href="#" id="random_post">Pick a random post</a>
+      </div>
+      <div>
+        <a href="#" id="disclaimer">Disclaimer</a>
+      </div>
+      <div>
         <a href="#" id="Uncopyrighted">Uncopyrighted</a>
         <p class="hoz_space"></p>
         <p>by</p>
         <p class="hoz_space"></p>
         <p class="author"></p>
-        <p>.</p>
-        <p class="hoz_space"></p>
+      </div>
+      <div>
         <p>Last built</p>
         <p class="hoz_space"></p>
         <p class="build_date"></p>
         <p class="hoz_space"></p>
+      </div>
+      <div>
         <p>View</p>
         <p class="hoz_space"></p>
         <a href="#" id="btn_view_credits">credits</a>
       </div>
+      <div>
+        <p>Found a</p>
+        <p class="hoz_space"></p>
+        <a href="https://github.com/AnAncientForce/AnAncientForce/issues"
+          >bug</a
+        >
+        <p>?</p>
+      </div>
     </div>
 
-    <div class="row center">
-      <a
-        href="https://github.com/AnAncientForce"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="assets/favicons/github.ico" />
-      </a>
-      <a
-        href="https://wiki.tockdom.com/wiki/User:Ayzula"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="assets/favicons/tockdom.ico" />
-      </a>
+    <div class="center">
+      <div class="row center socials">
+        <a
+          href="https://github.com/AnAncientForce"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="assets/favicons/github.ico" />
+        </a>
+        <a
+          href="https://wiki.tockdom.com/wiki/User:Ayzula"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="assets/favicons/tockdom.ico" />
+        </a>
+        <a
+          href="https://civitai.com/user/Sobsynapse/models"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="assets/favicons/civitai.ico" />
+        </a>
+      </div>
     </div>
 
     <script type="module" src="index.js"></script>

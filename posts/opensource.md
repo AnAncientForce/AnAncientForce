@@ -1,4 +1,4 @@
-In this post, I will explain what Open Source is in a very easy to understand way.
+In this post, I will explain what Open Source is in an easy to understand way.
 
 ### What is software?
 Software is anything that runs on a computer. Let's use an "app" for example. Adobe Photoshop is an app, which is a piece of software that runs on a computer.
@@ -18,7 +18,7 @@ Don't worry, that's when you would search for what others have to say about the 
 The decision is up to you! You may be required to use specific software for a certain task, and that software may be closed source, however if you trust the company then you probably know you're in good hands. Closed Source software usually have large teams behind them working towards making them user friendly, and more productive.
 
 With open source software, it's a bit different. Usually there's either a single person maintaining the software, or a small group of people who work on the software.
-Open source software is dependant on donations, since they are usually free. This is because the code is public so anyone could rebuild the software for themselves free of charge.
+Open source software is dependent on donations, since they are usually free. This is because the code is public so anyone could rebuild the software for themselves free of charge.
 
 Ultimately, I recommend using open source software if:
 

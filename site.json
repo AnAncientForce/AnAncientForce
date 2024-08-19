@@ -1,7 +1,13 @@
 [
   {
-    "author": "Ayzula",
+    "author": "AnAncientForce",
     "repo": "https://github.com/AnAncientForce/AnAncientForce",
-    "last_build": "11/05/2024"
+    "last_build": "18/08/2024"
+  },
+  {
+    "changelog": {
+      "2024-08-18": "Added a changelog to keep track of site improvements",
+      "2024-05-11": "This was a long time ago"
+    }
   }
 ]

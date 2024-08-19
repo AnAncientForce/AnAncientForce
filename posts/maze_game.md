@@ -115,4 +115,4 @@ The game consists of:
 
 ---
 
-# A download will be available soon
+# [You can download the game here!](https://mega.nz/folder/StM0iJ4T#-_mvKSXN3k33uk3i4iQg5A)
