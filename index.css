@@ -228,7 +228,7 @@ button:active {
 table {
   padding: 1%;
   /* width: 40vw; */
-  min-width: 60vw;
+  min-width: 100%;
   border-collapse: collapse;
 }
 table,

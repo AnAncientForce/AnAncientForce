@@ -14,8 +14,16 @@ let lazyloadImages;
 let cd = false;
 let total_network_usage = 0;
 let converter = new showdown.Converter({ smoothPreview: true });
-let debug = false;
+let debug = document.URL === "http://127.0.0.1:5500/";
 let recommended_content;
+
+function remove_blur() {
+  const x = document.querySelectorAll("*");
+  x.forEach((element) => {
+    element.style.filter = "none";
+    element.style.backdropFilter = "none";
+  });
+}
 
 function track_network_usage(elem) {
   // https://stackoverflow.com/questions/28430115/javascript-get-size-in-bytes-from-html-img-src/45409613#45409613
@@ -105,6 +113,14 @@ function lazyload() {
 
 async function show_reader(args) {
   if (!args?.file || !args?.title) {
+    return;
+  }
+
+  if (args?.draft) {
+    notify({
+      message: `"${args?.title}" is still in the works, check back soon!`,
+      timeout: 10,
+    });
     return;
   }
 
@@ -411,6 +427,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         show_reader({
           file: random_entry.file,
           title: random_entry.title,
+          draft: random_entry.draft,
         });
       } catch (error) {
         console.error("Error fetching JSON file:", error);
@@ -437,6 +454,11 @@ document.addEventListener("DOMContentLoaded", async () => {
           timeout: 2,
         });
         break;
+      case "b":
+        if (document.URL === "http://127.0.0.1:5500/") {
+          remove_blur();
+        }
+        break;
     }
   });
 
@@ -455,6 +477,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await load_dynamic_categories();
   await load_changelog();
+  if (isMobileDevice()) {
+    remove_blur();
+  }
   lazyload();
   cast_loading_screen(false);
 });
