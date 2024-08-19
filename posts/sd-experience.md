@@ -9,7 +9,7 @@ hires fix denoise 0.5, upscale by 2. Latent, R-ESRGAN 4×+ Anime6B.
 ```
 
 After apply these settings, the results were phenomenal! Never had I ever gotten such a high quality output like this before. 
-I spent a few weeks on  [Pixiv](https://pixiv.net) starting an AI art channel, posting the best generations I had made.
+I started an art channel on [Pixiv](https://pixiv.me/sobsynapse) and spent a few weeks posting the best generations I had made.
 <br>
 ### Early June Update
 <br>
@@ -17,7 +17,7 @@ Well well well, we're finally here. After a long time of putting it off (since I
 <br>
 The first thing I did was find the best SDXL model to use, after a lot of trial and error [t-ponynai3](https://civitai.com/models/317902/t-ponynai3) seemed to be the best choice for me. After my first generation I realized something was off.  My images did not look anything near what the sample images the model's creator provided. So, I read the description (something I don't typically do, same applies to manuals 💀). The description mentioned "**The best generate strategy is to use high-fix at a moderate resolution, rather than directly using high-resolution direct output**". I was using my previous Hi-Res fix setting from DosMix, and had no clue what I was supposed to change. Later, I found out that I could just import the model creator's images directly into AUTOMATIC1111 via the "PNG Info" tab and load the same settings that they used. The Hires setting was ready. A new journey began. Such an amazing model, such quality results. The hands actually looked like hands for once, which did not work very well in SD 1.5. 
 <br>
-I spent a few  more weeks posting generations on [Pixiv](https://pixiv.net) putting off training LoRAs for a while because I had imagined it would be extremely difficult to learn. Turns out, there were a ton of tutorials to follow, not that I really understood them, but at least I could follow them to some extent. One of the programs that is  used for training is  [Kohya](https://github.com/bmaltais/kohya_ss), it has a GUI similar to AUTOMATIC1111 so I thought it'd be worth a shot!
+I spent a few more weeks posting the new generations I had made with t-ponynai3 on [Pixiv](https://pixiv.me/sobsynapse) putting off training LoRAs for a while because I had imagined it would be extremely difficult to learn. Turns out, there were a ton of tutorials to follow, not that I really understood them, but at least I could follow them to some extent. One of the programs that is  used for training is  [Kohya](https://github.com/bmaltais/kohya_ss), it has a GUI similar to AUTOMATIC1111 so I thought it'd be worth a shot!
 
 
 ![image](media/sd-experience/sakuya-touhou.gif)

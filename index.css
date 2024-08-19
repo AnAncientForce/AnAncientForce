@@ -240,7 +240,7 @@ th,
 td {
   padding: 0.5%;
   text-align: center;
-  font-size: small;
+  font-size: large;
 }
 
 .post_section {
@@ -342,6 +342,11 @@ td {
 #recommended_content a {
   margin: 1vh;
   font-size: small;
+  color: white;
+}
+
+#recommended_content a:hover {
+  color: #535bf2;
 }
 
 .socials {
@@ -377,7 +382,7 @@ td {
   border-radius: 16px;
   padding: 0.5vw;
   margin: 0.5vw;
-  font-size: medium;
+  font-size: large;
   width: 100%;
 }
 
