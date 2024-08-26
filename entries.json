@@ -1,5 +1,14 @@
 [
   {
+    "file": "lora-creations",
+    "title": "LoRA Character Listing",
+    "tn": "civitai.png",
+    "date": "2024-08-25",
+    "draft": false,
+    "tag": "AI",
+    "recommended": ["sd-experience"]
+  },
+  {
     "file": "sd-experience",
     "title": "My experience with Stable Diffusion",
     "tn": "civitai.png",
@@ -7,15 +16,6 @@
     "draft": false,
     "tag": "AI",
     "recommended": ["lora-creations"]
-  },
-  {
-    "file": "lora-creations",
-    "title": "LoRA Character Listing",
-    "tn": "civitai.png",
-    "date": "2024-08-25",
-    "draft": false,
-    "tag": "Creations",
-    "recommended": ["sd-experience"]
   },
   {
     "file": "tockdom",
