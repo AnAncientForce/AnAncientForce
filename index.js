@@ -36,6 +36,28 @@ function track_network_usage(elem) {
     });
 }
 
+function fade_elements_in(args) {
+  if (!args?.div || !args?.tag) {
+    console.error(args?.div, args?.tag);
+    return;
+  }
+
+  const elements = document
+    .getElementById(args.div)
+    .getElementsByTagName(args.tag);
+
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.opacity = 0;
+  }
+
+  for (let i = 0; i < elements.length; i++) {
+    setTimeout(() => {
+      elements[i].classList.add("fade-in");
+      elements[i].style.opacity = 1;
+    }, i * 1000);
+  }
+}
+
 function cooldown(duration) {
   cd = !cd;
   setTimeout(function () {
@@ -172,6 +194,8 @@ async function show_reader(args) {
           });
       });
     }
+
+    reading_content.scrollTop = 0; // whoops should've added this sooner
 
     cast_loading_screen(false);
 
@@ -455,7 +479,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
         break;
       case "b":
-        if (document.URL === "http://127.0.0.1:5500/") {
+        if (debug) {
           remove_blur();
         }
         break;
@@ -482,4 +506,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   lazyload();
   cast_loading_screen(false);
+  fade_elements_in({
+    div: "facts",
+    tag: "p",
+  });
 });

@@ -8,7 +8,7 @@ I soon discovered more checkpoints, however with this specific model [DosMix](ht
 hires fix denoise 0.5, upscale by 2. Latent, R-ESRGAN 4×+ Anime6B.
 ```
 
-After apply these settings, the results were phenomenal! Never had I ever gotten such a high quality output like this before. 
+After applying these settings, the results were phenomenal! Never had I ever gotten such a high quality output like this before. 
 I started an art channel on [Pixiv](https://pixiv.me/sobsynapse) and spent a few weeks posting the best generations I had made.
 <br>
 ### Early June Update

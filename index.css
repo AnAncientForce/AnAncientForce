@@ -225,10 +225,23 @@ button:active {
   height: 37.5vh;
 }
 
+#facts {
+  font-size: large;
+  font-weight: bold;
+}
+#facts > p {
+  margin: 1%;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
 table {
   padding: 1%;
   /* width: 40vw; */
-  min-width: 100%;
+  min-width: 60vw;
   border-collapse: collapse;
 }
 table,
