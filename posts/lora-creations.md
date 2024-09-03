@@ -17,6 +17,18 @@
 * [Benitsubasa](https://civitai.com/models/681842/benitsubasa-sekirei?modelVersionId=763157)
 * [Haihane](https://civitai.com/models/684614/haihane-sekirei?modelVersionId=766240)
 * [Hikari & Hibiki](https://civitai.com/models/688539/hikari-and-hibiki-sekirei?modelVersionId=770619)
+* [Kazehana](https://civitai.com/models/689221/kazehana-sekirei?modelVersionId=771364)
+* [Kuno](https://civitai.com/models/691959/kuno-sekirei)
+* [Kusano](https://civitai.com/models/692230/kusano-sekirei)
+* [Miya Asama](https://civitai.com/models/693117/miya-asama-sekirei)
+* [Uzume](https://civitai.com/models/694086/uzume-sekirei)
+* [Matsu](https://civitai.com/models/696460/matsu-sekirei)
+* [Tsukiumi](https://civitai.com/models/699498/tsukiumi-sekirei)
+* [Musubi](https://civitai.com/models/699803/musubi-sekirei)
+* [Shiina](https://civitai.com/models/700080/shiina-sekirei)
+
+### Shuffle!
+* [Asa Shigure](https://civitai.com/models/718332/asa-shigure-shuffle)
 
 ### Zenless Zone Zero
 * [Nicole Demara](https://civitai.com/models/629790/nicole-demara-zenless-zone-zero?modelVersionId=704108)
