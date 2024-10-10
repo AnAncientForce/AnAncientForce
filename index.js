@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   await load_dynamic_categories();
-  await load_changelog();
+  // await load_changelog();
   if (isMobileDevice()) {
     remove_blur();
   }

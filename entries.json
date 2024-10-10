@@ -1,9 +1,18 @@
 [
   {
+    "file": "shopcore",
+    "title": "ShopCore",
+    "tn": "4283893-1638626317.png",
+    "date": "2024-09-20",
+    "draft": true,
+    "tag": "Creations",
+    "recommended": ["web_dev"]
+  },
+  {
     "file": "lora-creations",
     "title": "LoRA Character Listing",
     "tn": "civitai.png",
-    "date": "2024-08-25",
+    "date": "2024-10-10",
     "draft": false,
     "tag": "AI",
     "recommended": ["sd-experience"]

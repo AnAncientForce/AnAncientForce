@@ -1,4 +1,21 @@
 ⚠️ **Only compatible with Pony Checkpoints**
+<br>
+#### For some unknown reason, collections won't load via the Collections tab on my Civitai profile, so I've linked each collection here:
+<br>
+### Television Series
+* [Sekirei](https://civitai.com/collections/5206773)
+* [Maken-ki!](https://civitai.com/collections/5206695)
+* [Shuffle!](https://civitai.com/collections/5206780)
+* [Trinity Seven](https://civitai.com/collections/5206785)
+
+### Video Game Series
+* [Zenless Zone Zero](https://civitai.com/collections/5206768)
+* [Blue Archive](https://civitai.com/collections/5206657)
+* [Wuthering Waves](https://civitai.com/collections/5205994)
+* [Genshin Impact](https://civitai.com/collections/5206668)
+<br>
+#### Just incase the collections feature still fails to load, I've linked each LoRA here:
+<br>
 ### Maken-ki!
 * [Himegami Kodama](https://civitai.com/models/651312/himegami-kodama-maken-ki?modelVersionId=728653)
 * [Amaya Haruko](https://civitai.com/models/655164/amaya-haruko-maken-ki?modelVersionId=732995)
@@ -29,7 +46,21 @@
 
 ### Shuffle!
 * [Asa Shigure](https://civitai.com/models/718332/asa-shigure-shuffle)
+* [Kaede Fuyou](https://civitai.com/models/721068/kaede-fuyou-shuffle)
+* [Kareha](https://civitai.com/models/726454/kareha-shuffle)
+* [Nadeshiko Benibara](https://civitai.com/models/727124/nadeshiko-benibara-shuffle)
+* [Mayumi Thyme](https://civitai.com/models/730130/mayumi-thyme-shuffle)
+* [Primula](https://civitai.com/models/732954/primula-shuffle)
+* [Nerine](https://civitai.com/models/733265/nerine-shuffle)
+* [Lisianthus](https://civitai.com/models/737322/lisianthus-shuffle)
 
+### Trinity Seven
+* [Akio Fudo](https://civitai.com/models/740313/akio-fudo-trinity-seven)
+* [Hijiri Kasuga](https://civitai.com/models/743332/hijiri-kasuga-trinity-seven)
+* [Levi Kazama](https://civitai.com/models/743830/levi-kazama-trinity-seven)
+* [Lieselotte Sherlock](https://civitai.com/models/744010/lieselotte-sherlock-trinity-seven)
+* [Lilith Asami](https://civitai.com/models/745834/lilith-asami-trinity-seven)
+* [Lugh](https://civitai.com/models/745959/lugh-trinity-seven)
 ### Zenless Zone Zero
 * [Nicole Demara](https://civitai.com/models/629790/nicole-demara-zenless-zone-zero?modelVersionId=704108)
 * [Anby Demara](https://civitai.com/models/630021/anby-demara-zenless-zone-zero?modelVersionId=704375)
@@ -39,6 +70,8 @@
 * [Yinlin](https://civitai.com/models/624482/yinlin-wuthering-waves?modelVersionId=698159)
 * [Yangyang](https://civitai.com/models/624482/yinlin-wuthering-waves?modelVersionId=698159)
 * [Changli](https://civitai.com/models/627916/changli-wuthering-waves?modelVersionId=702078)
+* [Zhezhi / Wuthering Waves](https://civitai.com/models/836510/zhezhi-wuthering-waves)
+* [The Shorekeeper / Wuthering Waves](https://civitai.com/models/839095/the-shorekeeper-wuthering-waves)
 
 ### Genshin Impact
 * [Sangonomiya Kokomi](https://civitai.com/models/619690/sangonomiya-kokomi-genshin-impact?modelVersionId=692730)
