@@ -1,7 +1,19 @@
 [
   {
+    "file": "the-linux-experience",
+    "title": "The Linux Experience",
+    "description": "In this blog, I will briefly outline the key steps I went through to having a successful Hyprland installation.",
+    "tn": "",
+    "tn_source": "",
+    "date": "2025-01-23",
+    "draft": true,
+    "tag": "Articles",
+    "recommended": ["gecko_rant"]
+  },
+  {
     "file": "shopcore",
     "title": "ShopCore",
+    "description": "",
     "tn": "4283893-1638626317.png",
     "date": "2024-09-20",
     "draft": true,
@@ -9,8 +21,20 @@
     "recommended": ["web_dev"]
   },
   {
-    "file": "lora-creations",
+    "file": "wuthering-waves-ps",
+    "title": "Wuthering Waves PS",
+    "description": "In this article, I explain how to setup a Wuthering Waves PS",
+    "tn": "",
+    "tn_source": "",
+    "date": "2024-10-20",
+    "draft": false,
+    "tag": "Tutorials",
+    "recommended": ["gecko_rant", "maze_game", "vocaloid"]
+  },
+  {
+    "file": "lora-character-listing",
     "title": "LoRA Character Listing",
+    "description": "Links to all Stable Diffusion Low-Rank Adaptation models I have trained",
     "tn": "civitai.png",
     "date": "2024-10-10",
     "draft": false,
@@ -18,100 +42,9 @@
     "recommended": ["sd-experience"]
   },
   {
-    "file": "sd-experience",
-    "title": "My experience with Stable Diffusion",
-    "tn": "civitai.png",
-    "date": "2024-08-18",
-    "draft": false,
-    "tag": "AI",
-    "recommended": ["lora-creations"]
-  },
-  {
-    "file": "tockdom",
-    "title": "Gensokyo Night Racing",
-    "tn": "300px-Gensokyo_Night_Racing_Cover.png",
-    "date": "2024-02-25",
-    "draft": false,
-    "tag": "Creations"
-  },
-  {
-    "file": "maze_game",
-    "title": "Floating Dungeon of Mist and Sand",
-    "tn": "pyramid_PNG2-3559344702.png",
-    "tn_source": "pngimg.com",
-    "date": "2024-04-19",
-    "draft": false,
-    "tag": "Creations"
-  },
-
-  {
-    "file": "sysZ",
-    "title": "sysZ",
-    "tn": "terminal_help.png",
-    "tn_source": "",
-    "date": "2023-10-18",
-    "draft": false,
-    "tag": "Creations",
-    "recommended": ["linux-vs-windows"]
-  },
-  {
-    "file": "tpr_trip",
-    "title": "Thorpe Park Photo Collection #1",
-    "tn": "IMG_20230911_140244086.jpg",
-    "date": "2023-07-11",
-    "draft": false,
-    "tag": "Blogs"
-  },
-  {
-    "file": "web_dev",
-    "title": "Creating this website",
-    "tn": "HTML.png",
-    "tn_source": "",
-    "date": "2024-05-09",
-    "draft": false,
-    "tag": "Blogs"
-  },
-  {
-    "file": "linux-vs-windows",
-    "title": "Linux VS Windows, what will you choose?",
-    "tn": "linux-vs-windows-4181040077.png",
-    "date": "2024-05-11",
-    "draft": false,
-    "tag": "Articles"
-  },
-  {
-    "file": "opensource",
-    "title": "What is open source software?",
-    "tn": "open-source-logo-1776475999.png",
-    "tn_source": "linuxnewbieguide.org",
-    "date": "2024-05-07",
-    "draft": false,
-    "tag": "Articles",
-    "recommended": ["gecko_rant"]
-  },
-  {
-    "file": "gacha_skip",
-    "title": "Why gacha games should have skip buttons",
-    "tn": "qiqi_2.png",
-    "tn_source": "",
-    "date": "2024-05-09",
-    "draft": false,
-    "tag": "Articles",
-    "recommended": ["vocaloid"]
-  },
-  {
-    "file": "gecko_rant",
-    "title": "Importance of Firefox",
-    "tn": "firefox.png",
-    "tn_source": "blog.mozilla.org",
-    "date": "2024-05-09",
-    "draft": false,
-    "tag": "Articles",
-    "recommended": ["opensource"]
-  },
-  {
-    "file": "music_stream",
+    "file": "best-music-streaming-service",
     "title": "Best music streaming service?",
+    "description": "In this article, I explain the differences between Spotify and YouTube Music",
     "tn": "spotify.png",
     "tn_source": "factoryrewa.weebly.com",
     "date": "2024-05-12",
@@ -120,16 +53,9 @@
     "recommended": ["vocaloid"]
   },
   {
-    "file": "perfect_winstall",
-    "title": "Debloat Windows",
-    "tn": "b457c648-65b6-438d-9375-094c647f2066-1581621697.png",
-    "date": "2024-08-19",
-    "draft": false,
-    "tag": "Tutorials"
-  },
-  {
-    "file": "short_story_01",
+    "file": "moral-plan-in-advance",
     "title": "Moral: Plan in Advance",
+    "description": "A story about why it may be important to plan in advance",
     "tn": "notebook.png",
     "tn_source": "clipart-library.com",
     "date": "2024-05-10",
@@ -137,8 +63,91 @@
     "tag": "Short Stories"
   },
   {
+    "file": "importance-of-firefox",
+    "title": "Importance of Firefox",
+    "description": "In this article, I explain the importance of Firefox",
+    "tn": "firefox.png",
+    "tn_source": "blog.mozilla.org",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Articles",
+    "recommended": ["opensource"]
+  },
+  {
+    "file": "linux-vs-windows",
+    "title": "Linux VS Windows, what will you choose?",
+    "description": "In this article, I explain the differences between Linux and Microsoft Windows",
+    "tn": "linux-vs-windows-4181040077.png",
+    "date": "2024-05-11",
+    "draft": false,
+    "tag": "Articles"
+  },
+  {
+    "file": "my-experience-with-stable-diffusion",
+    "title": "My experience with Stable Diffusion",
+    "description": "In this article, I describe my experience with Stable Diffusion",
+    "tn": "civitai.png",
+    "date": "2024-08-18",
+    "draft": false,
+    "tag": "AI",
+    "recommended": ["lora-creations"]
+  },
+  {
+    "file": "why-gacha-games-should-have-skip-buttons",
+    "title": "Why gacha games should have skip buttons",
+    "description": "Hint: It's a rant :)",
+    "tn": "qiqi_2.png",
+    "tn_source": "",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Articles",
+    "recommended": ["vocaloid"]
+  },
+  {
+    "file": "creating-my-first-static-website",
+    "title": "Creating this website",
+    "description": "A devlog about showcasing the creation of my first static website",
+    "tn": "HTML.png",
+    "tn_source": "",
+    "date": "2024-05-09",
+    "draft": false,
+    "tag": "Blogs"
+  },
+  {
+    "file": "debloat-windows",
+    "title": "Debloat Windows",
+    "description": "In this article, I explain my process of debloating the windows operating system",
+    "tn": "b457c648-65b6-438d-9375-094c647f2066-1581621697.png",
+    "date": "2024-08-19",
+    "draft": false,
+    "tag": "Tutorials"
+  },
+  {
+    "file": "what-is-open-source-software",
+    "title": "What is open source software?",
+    "description": "In this article, I briefly explain what open source software is",
+    "tn": "open-source-logo-1776475999.png",
+    "tn_source": "linuxnewbieguide.org",
+    "date": "2024-05-07",
+    "draft": false,
+    "tag": "Articles",
+    "recommended": ["gecko_rant"]
+  },
+  {
+    "file": "software-i-use",
+    "title": "Software I use",
+    "description": "In this article, I showcase software that I used on a regular basis",
+    "tn": "installer-97887_960_720-3265255196.png",
+    "tn_source": "pixabay.com",
+    "date": "2024-05-07",
+    "draft": false,
+    "tag": "ʘ‿ʘ",
+    "recommended": ["gecko_rant", "maze_game", "vocaloid"]
+  },
+  {
     "file": "vocaloid",
     "title": "Vocaloid",
+    "description": "In this article, I tell you about Vocaloid!",
     "tn": "latest-2526423816.png",
     "tn_source": "vocaloid.wikia.com",
     "date": "2024-05-07",
@@ -147,13 +156,42 @@
     "recommended": ["music_stream", "softwares"]
   },
   {
-    "file": "softwares",
-    "title": "Software I use",
-    "tn": "installer-97887_960_720-3265255196.png",
-    "tn_source": "pixabay.com",
-    "date": "2024-05-07",
+    "file": "floating-dungeon-of-mist-and-sand",
+    "title": "Floating Dungeon of Mist and Sand",
+    "description": "A 3D horror game that I created for a college assignment",
+    "tn": "pyramid_PNG2-3559344702.png",
+    "tn_source": "pngimg.com",
+    "date": "2024-04-19",
     "draft": false,
-    "tag": "ʘ‿ʘ",
-    "recommended": ["gecko_rant", "maze_game", "vocaloid"]
+    "tag": "Creations"
+  },
+  {
+    "file": "gensokyo-night-racing",
+    "title": "Gensokyo Night Racing",
+    "description": "Showcasing a Touhou Project-themed Mario Kart Wii texture pack I created",
+    "tn": "300px-Gensokyo_Night_Racing_Cover.png",
+    "date": "2024-02-25",
+    "draft": false,
+    "tag": "Creations"
+  },
+  {
+    "file": "sysZ",
+    "title": "sysZ",
+    "description": "In this article, I showcase a preconfigured customization of the i3 Window Manager that I made",
+    "tn": "terminal_help.png",
+    "tn_source": "",
+    "date": "2023-10-18",
+    "draft": false,
+    "tag": "Creations",
+    "recommended": ["linux-vs-windows"]
+  },
+  {
+    "file": "thorpe-park-photo-collection-1",
+    "title": "Thorpe Park Photo Collection #1",
+    "description": "A photo collection from my trip to Thorpe Park",
+    "tn": "IMG_20230911_140244086.jpg",
+    "date": "2023-07-11",
+    "draft": false,
+    "tag": "Blogs"
   }
 ]

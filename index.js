@@ -16,6 +16,7 @@ let total_network_usage = 0;
 let converter = new showdown.Converter({ smoothPreview: true });
 let debug = document.URL === "http://127.0.0.1:5500/";
 let recommended_content;
+let layout;
 
 function remove_blur() {
   const x = document.querySelectorAll("*");
@@ -262,8 +263,10 @@ async function load_changelog() {
   }
 }
 
-async function load_dynamic_categories() {
+async function load_dynamic_categories(target_category) {
   try {
+    dynamic_content.innerHTML = "";
+
     const site_json = await fetch("site.json");
     const entries_json = await fetch("entries.json");
 
@@ -295,38 +298,68 @@ async function load_dynamic_categories() {
 
       check_URL_for_matching_post(item);
 
-      let section;
-
-      if (!document.querySelector(`#${item.tag}`)) {
-        const outer_section = document.createElement("div");
-        const section_title = document.createElement("h1");
-        outer_section.classList.add("post_section", "column");
-        section_title.textContent = item.tag;
-        outer_section.appendChild(section_title);
-        section = document.createElement("div");
-        section.id = item.tag;
-        section.classList.add("post_section", "inner", "row");
-        outer_section.appendChild(section);
-        dynamic_content.appendChild(outer_section);
-      } else {
-        section = document.querySelector(`#${item.tag}`);
+      if (target_category) {
+        if (target_category != item.tag) {
+          continue;
+        }
       }
 
       const div = document.createElement("div");
+      const date = document.createElement("div");
+      const cat = document.createElement("div");
       const title = document.createElement("h1");
+      const desc = document.createElement("p");
       const tn = document.createElement("img");
-      const date = document.createElement("p");
+      const wc = document.createElement("p");
+      const est_time = document.createElement("p");
+      const tr_div = document.createElement("div");
+      const tr_div_2 = document.createElement("div");
 
-      div.classList.add("post_tile", "container", "outline");
-      tn.classList.add("post_thumbnail");
+      div.classList.add("post_tile");
+      tr_div.classList.add("row", "tr_div");
+      tr_div_2.classList.add("row", "tr_div_2");
+      // tn.classList.add("post_thumbnail");
       title.textContent = item.title;
-      date.textContent = dayjs(item.date).fromNow();
+
+      desc.textContent = item.description;
+
+      date.classList.add("row");
+      date.appendChild(
+        document
+          .getElementById("material-symbols:calendar-today-outline-rounded")
+          .cloneNode(true)
+      );
+
+      date.appendChild(document.createTextNode(dayjs(item.date).fromNow()));
+
+      cat.classList.add("row");
+      cat.appendChild(
+        document
+          .getElementById("material-symbols:book-2-outline-rounded")
+          .cloneNode(true)
+      );
+
+      cat.appendChild(document.createTextNode(item.tag));
+
+      const response = await fetch(`../posts/${item.file + ".md"}`);
+      const markdown = await response.text();
+      const wordCount = markdown
+        .replace(/[#*_>\-`[\]]+/g, "")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean).length;
+
+      wc.textContent = `${wordCount} words`;
+      est_time.textContent = `${Math.ceil(wordCount / 200)} minutes`;
+
       // console.log(item.title, dayjs(item.date).fromNow()); // y, m, d
 
+      /*
       if (item.tn) {
         tn.dataset.src = `../assets/thumbnails/${item.tn}`;
         tn.classList.add("lazy", "image");
       }
+      */
 
       if (item.draft) {
         title.style.color = "red";
@@ -343,13 +376,54 @@ async function load_dynamic_categories() {
         }
       });
 
+      tr_div.appendChild(date);
+      tr_div.appendChild(cat);
+      tr_div_2.appendChild(wc);
+      tr_div_2.appendChild(est_time);
+
       div.appendChild(title);
+      div.appendChild(tr_div);
+      div.appendChild(desc);
+      div.appendChild(tr_div_2);
       div.appendChild(tn);
-      div.appendChild(date);
-      section.appendChild(div);
+      dynamic_content.appendChild(div);
     }
   } catch (error) {
     console.error("Error fetching JSON file:", error);
+  }
+}
+
+async function load_tag_listings() {
+  try {
+    const entries_json = await fetch("entries.json");
+    const entries_data = await entries_json.json();
+
+    for (let i = 0; i < entries_data.length; i++) {
+      const item = entries_data[i];
+
+      if (!document.querySelector(`#${item.tag}`)) {
+        const tag_btn = document.createElement("button");
+
+        tag_btn.id = item.tag;
+        tag_btn.textContent = item.tag;
+
+        tag_btn.addEventListener("click", async () => {
+          await load_dynamic_categories(item.tag);
+        });
+
+        document.getElementById("dynamic_tags").appendChild(tag_btn);
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching JSON file:", error);
+  }
+}
+
+function check_window_size() {
+  if (isMobileDevice()) {
+    layout.classList.remove("row");
+  } else {
+    layout.classList.add("row");
   }
 }
 
@@ -360,21 +434,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   btn_reading_window_leave = document.getElementById(
     "btn_reading_window_leave"
   );
+  layout = document.getElementById("layout");
   // copyright = document.getElementById("copyright");
   loading_screen = document.getElementById("loading-screen");
   recommended_content = document.getElementById("recommended_content");
 
   cast_loading_screen(true);
 
-  reading_window.style.display = "none";
+  check_window_size();
 
-  /*
-  if (isMobileDevice()) {
-    alert(
-      "The content of this website may be displayed incorrectly; it is highly recommended to view this website on larger screen"
-    );
-  }
-  */
+  reading_window.style.display = "none";
 
   dayjs.extend(window.dayjs_plugin_relativeTime);
 
@@ -414,56 +483,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-  document
-    .getElementById("Uncopyrighted")
-    .addEventListener("click", (event) => {
-      event.preventDefault();
-
-      show_reader({
-        file: "uncopyright",
-        title: "Uncopyright",
-      });
-    });
-
-  document
-    .getElementById("btn_view_credits")
-    .addEventListener("click", (event) => {
-      event.preventDefault();
-
-      show_reader({
-        file: "credit",
-        title: "Credits",
-      });
-    });
-
-  document
-    .getElementById("random_post")
-    .addEventListener("click", async (event) => {
-      event.preventDefault();
-
-      try {
-        const entries_json = await fetch("entries.json");
-        const entries_data = await entries_json.json();
-
-        const random_entry =
-          entries_data[Math.floor(Math.random() * entries_data.length)];
-
-        show_reader({
-          file: random_entry.file,
-          title: random_entry.title,
-          draft: random_entry.draft,
-        });
-      } catch (error) {
-        console.error("Error fetching JSON file:", error);
-      }
-    });
-
-  document.getElementById("disclaimer").addEventListener("click", (event) => {
-    event.preventDefault();
-
+  document.getElementById("all").addEventListener("click", async () => {
+    await load_dynamic_categories();
+  });
+  document.getElementById("about").addEventListener("click", async () => {
     show_reader({
-      file: "disclaimer",
-      title: "Disclaimer",
+      file: "about",
+      title: "💫 About Me 💫",
     });
   });
 
@@ -488,18 +514,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   window.addEventListener("resize", function () {
     lazyload();
-    if (debug && isMobileDevice()) {
-      if (!cd) {
-        notify({
-          message: "Adapted resolution for mobile",
-          timeout: 2,
-        });
-        cooldown(5000);
-      }
+    if (!cd) {
+      check_window_size();
+      notify({
+        message: "Adapted resolution for mobile",
+        timeout: 2,
+      });
+      cooldown(500);
     }
   });
 
   await load_dynamic_categories();
+  await load_tag_listings();
   // await load_changelog();
   if (isMobileDevice()) {
     remove_blur();

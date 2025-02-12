@@ -2,10 +2,11 @@
   {
     "author": "AnAncientForce",
     "repo": "https://github.com/AnAncientForce/AnAncientForce",
-    "last_build": "10/10/2024"
+    "last_build": "12/02/2025"
   },
   {
     "changelog": {
+      "2025-02-12": "Reworked entire design, heavily similar to fuwari but without the bloat",
       "2024-08-19": "Disable blur on Mobile Device, Added new 'Tutorials' section",
       "2024-08-18": "Added a changelog to keep track of site optimizations",
       "2024-05-11": "This was a long time ago"

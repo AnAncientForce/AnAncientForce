@@ -1,1 +1,0 @@
-<p style="text-align: center;">You can use the content on this website however you'd like. Credit is appreciated, but is not required.</p>

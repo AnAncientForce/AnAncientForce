@@ -1,1 +1,0 @@
-All content on this website is based on things I have previously seen, experienced, or created. Content is mostly based on my own opinions, so try not to take it word for word. It's always best to do your own research.
