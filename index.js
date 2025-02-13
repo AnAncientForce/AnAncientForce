@@ -516,20 +516,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     lazyload();
     if (!cd) {
       check_window_size();
-      notify({
-        message: "Adapted resolution for mobile",
-        timeout: 2,
-      });
-      cooldown(500);
+      if (debug) {
+        notify({
+          message: "Adapted resolution for mobile",
+          timeout: 2,
+        });
+        cooldown(5000);
+      } else {
+        cooldown(500);
+      }
     }
   });
 
   await load_dynamic_categories();
   await load_tag_listings();
   // await load_changelog();
+  /*
   if (isMobileDevice()) {
     remove_blur();
   }
+  */
   lazyload();
   cast_loading_screen(false);
   fade_elements_in({
